@@ -4,6 +4,9 @@ Lethargus analysis
 Author: Shinichi Miyazaki
 
 This script enable lethargus analysis for imagesubtraction data
+
+Work on Windows 10 (64bit)
+Python 3.12.3
 """
 
 import os
@@ -20,11 +23,12 @@ def main():
 
     # Load data and make bodysize_list
     data = pd.read_csv(filepath)
-    row_number = data.shape[1]
-    body_size = int(input('bodysize (pixel) を入力 : '))
+    body_size = int(input('bodysize (pixel) : '))
+    fig_rnum = int(input('How many rows? : '))
+    fig_cnum = int(input('How many columns? : '))
 
     # Lethargus analysis
-    lethargus_analyzer(data, body_size)
+    lethargus_analyzer(data, body_size, fig_rnum, fig_cnum)
 
 if __name__ == '__main__':
     main()

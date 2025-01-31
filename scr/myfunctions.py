@@ -144,7 +144,7 @@ def DTS_column_analysis(analysis_res_df,
         elif quiescent_island_num == 0:
             judge = "No_DTS"
         elif max_start[i] < margin_image_num:
-            judge = "DTS_Start_Within_30min"
+            judge = "DTS_Start_Within_60min"
         elif max_q_end > column_num - margin_image_num:
             judge = "DTS_not_end"
         else:
