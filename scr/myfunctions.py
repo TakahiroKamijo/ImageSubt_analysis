@@ -18,7 +18,7 @@ import seaborn
 imaging_interval = 2  # (sec)
 image_num_per_hour = int(3600 / imaging_interval)
 # if DTS starts within 30 min, it is not used for analysis
-margin_image_num = int(1800 / imaging_interval)
+margin_image_num = int(3600 / imaging_interval)
 # The definition of out of DTS is 10 min after DTS end
 out_DTS_duration = 600  # (sec)
 out_DTS_image_num = int(out_DTS_duration / imaging_interval)
@@ -376,10 +376,10 @@ def SIS_column_analysis(analysis_res_df,
         current_row_length = duration_hour * image_num_per_hour
         if len(analysis_res_df) > duration_hour * image_num_per_hour:
             # limit the df length to duration_hour
-            limited_analysis_res_df = analysis_res_df.iloc[:duration_hour * image_num_per_hour]
-            limited_SIS_boolean = SIS_boolean.iloc[:duration_hour * image_num_per_hour]
-            limited_Wake_sleep_boolean = Wake_sleep_boolean.iloc[:duration_hour * image_num_per_hour]
-            limited_FoQ = FoQ_raw.iloc[:duration_hour * image_num_per_hour]
+            limited_analysis_res_df = analysis_res_df.iloc[:int(duration_hour * image_num_per_hour)]
+            limited_SIS_boolean = SIS_boolean.iloc[:int(duration_hour * image_num_per_hour)]
+            limited_Wake_sleep_boolean = Wake_sleep_boolean.iloc[:int(duration_hour * image_num_per_hour)]
+            limited_FoQ = FoQ_raw.iloc[:int(duration_hour * image_num_per_hour)]
 
             # Bout analysis
             max_start, max_length, all_start, all_length = maxisland_start_len_mask(limited_SIS_boolean)
