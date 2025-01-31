@@ -9,7 +9,7 @@ This script enable lethargus analysis for imagesubtraction data
 import os
 import tkinter.filedialog
 import pandas as pd
-from functions.myfunctions import lethargus_analyzer
+from myfunctions import lethargus_analyzer
 
 def main():
     # select file
