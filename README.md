@@ -37,5 +37,5 @@ If the FoQ is above this threshold for more than 20 min, the episode is judged a
 ## Reference
 The definition of DTS followed the paper below. Funato et al., 2016, Nature
 ## Authors
-Taizo Kawano
+Taizo Kawano  
 Shinichi Miyazaki
